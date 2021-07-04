@@ -1,5 +1,5 @@
-import {combinedReducers} from 'redux';
-
-export default cobinedReducers({
-    replaceME: () => 'hi There'
+import {combineReducers} from 'redux';
+import postReducer from './PostReducer';
+export default combineReducers({
+    posts: postReducer
 });
