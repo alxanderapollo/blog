@@ -6,9 +6,24 @@ class PostList extends React.Component {
     componentDidMount(){
         this.props.fetchPosts();
     }
+    renderList(){
+        // each key in the map, is mapped with item from our end point
+        //dispalying by post title and body
+        return this.props.posts.map(post =>{
+            <div className="item" key={post.id}>
+                <i className="large middle aligned icon user"/>
+                <div className="content">
+                    <div className="description" >
+                        <h2>{post.title}</h2>
+                        <p>{post.body}</p>
+                    </div>
+                </div>
+            </div>
+        })
+    }
     render() {
-        console.log('First time it renders: ' + this.props.posts)
-        return <div>Post List</div>;
+        // console.log('First time it renders: ' + this.props.posts)
+        return <div className="ui relaxed divided list">this.renderList()</div>;
     }
 }
 //anytime we want to get information from our redux state into our react components we need to create a MAP to state function
