@@ -36,3 +36,4 @@ const mapStateToProps = (state) =>{
 //null meaning we dont have an states that we want to change
 //fetch posts is our action creator
 export default connect(mapStateToProps,{fetchPosts})(PostList);
+//added something to silly
