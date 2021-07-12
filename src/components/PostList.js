@@ -37,3 +37,4 @@ const mapStateToProps = (state) =>{
 //fetch posts is our action creator
 export default connect(mapStateToProps,{fetchPosts})(PostList);
 //added something to silly
+//added another silly thing to check if anything changed
