@@ -1,11 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchPosts} from '../actions';
+import UserHeader from './UserHeader'
 class PostList extends React.Component {
     //return fetch posts
     componentDidMount(){
         this.props.fetchPosts();
     }
+
     renderList(){
         // each key in the map, is mapped with item from our end point
         //dispalying by post title and body
@@ -17,6 +19,7 @@ class PostList extends React.Component {
                         <h2>{post.title}</h2>
                         <p>{post.body}</p>
                     </div>
+                    <UserHeader userId={post.userId}/>
                 </div>
             </div>
         })
@@ -35,6 +38,9 @@ const mapStateToProps = (state) =>{
 
 //null meaning we dont have an states that we want to change
 //fetch posts is our action creator
-export default connect(mapStateToProps,{fetchPosts})(PostList);
+export default connect(
+    mapStateToProps,
+    {fetchPosts}
+    )(PostList);
 //added something to silly
 //added another silly thing to check if anything changed
